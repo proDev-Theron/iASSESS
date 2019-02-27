@@ -405,7 +405,7 @@ a.btn-lg {
 .btn-nav,
 a.btn-nav,
 .navbar-nav>li>a.btn-nav {
-    color: #ffffff;
+    color: #439fe0;
     margin-right: 0;
     margin-bottom: 0;
     opacity: 1 !important;
@@ -1614,7 +1614,7 @@ textarea {
 }
 
 .navbar-nav>li>a {
-    color: #404B55;
+    color: #ffffff;
     font-size: 15px;
     font-weight: 700;
     opacity: 0.8;

@@ -105,19 +105,19 @@
 
     </box>
 
-    <!--opening text-->
+  <!--opening text-->
     <box id="openingText" position="relative" margin-top="30" anim="top" animtime="1" ease="Bounce.easeOut" class="col-md-8 col-md-offset-2 cent" z-index="1">
 
-    	<image id="img" position="relative" margin-bottom="30" anim="none" class="center-block"><![CDATA[https://giphy.com/embed/OkJat1YNdoD3W]]></image>
+    	<image id="img" position="relative" margin-bottom="30" anim="none" class="center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
 
-    	<text id="title" position="relative" anim="none"><![CDATA[<h1 class="black">Welcome to iASSESS</h1><p class="p_16_black">Get to know your competency before the Assessment</p><p class="p_16_black">Start when you're ready and good luck!</p>]]></text>
+    	<text id="title" position="relative" anim="none"><![CDATA[<h1 class="text-white m-b-md p-t-md">Multiple Choice Quiz</h1><p class="p_16_black">Welcome to this short quiz.</p><p class="p_16_black">Start when you're ready and good luck!</p>]]></text>
 
     	<button id="goBtn" position="relative" height="40" margin-top="20" display="inline-block" width="100" anim="none" event="btnover,begin" target="title" class="center-block"><![CDATA[Let's go!]]></button>
     </box>
 
     <!--timed quiz-->
     <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-6 col-md-offset-3 cent">
-		<settings timer="false" timerx="0" timery="0"/>
+		<settings timer="true" timerx="570" timery="120"/>
         
 		<!-- question 1 -->
         <question id="q1" time="15" event="">
