@@ -273,7 +273,7 @@ window.twttr = (function(d, s, id) {
 ============================================================== */
 if( $('.countdown').length ) {
     $(".countdown").jCounter({
-        date: "16 december 2016 9:00:00", // Deadline date
+        date: "2 March 2019 9:00:00", // Deadline date
         timezone: "Europe/London",
         format: "dd:hh:mm:ss",
         twoDigits: 'on',

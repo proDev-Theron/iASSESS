@@ -101,7 +101,7 @@
 
     <!--responsive timer-->
     <!--1 column layout, moves to top center on phones-->
-    <box id="timerContainer" position="absolute" x="0" y="0" height="20" anim="none" animtime="0.5" animdelay="1" class="col-md-8 col-md-offset-2 cent" z-index="2">
+    <box id="timerContainer" position="relative" x="0" y="0" height="20" anim="none" animtime="0.5" animdelay="1" class="col-md-8 col-md-offset-2 cent" z-index="2">
 
     </box>
 
@@ -110,17 +110,17 @@
 
     	<image id="img" position="relative" margin-bottom="30" anim="none" class="center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
 
-    	<text id="title" position="relative" anim="none"><![CDATA[<h1 class="text-white m-b-md p-t-md">Multiple Choice Quiz</h1><p class="p_16_black">Welcome to this short quiz.</p><p class="p_16_black">Start when you're ready and good luck!</p>]]></text>
+    	<text id="title" position="relative" anim="none"><![CDATA[<h1 class="m-b-md p-t-md">Welcome to iASSESS</h1><p class="p-t-md">Experience credible self-assessment for Computer Systems Servicing NCII</p><p class="p_16_black">Start when you're ready and good luck!</p>]]></text>
 
     	<button id="goBtn" position="relative" height="40" margin-top="20" display="inline-block" width="100" anim="none" event="btnover,begin" target="title" class="center-block"><![CDATA[Let's go!]]></button>
     </box>
 
     <!--timed quiz-->
     <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-6 col-md-offset-3 cent">
-		<settings timer="true" timerx="570" timery="120"/>
+		<settings timer="true" timerx="570" timery="80"/>
         
 		<!-- question 1 -->
-        <question id="q1" time="15" event="">
+        <question id="q1" time="100" event="">
 
     		<image id="img" position="relative" margin-top="30" margin-bottom="40" anim="show" animtime="1" animdelay="0" class="img-responsive center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
 
