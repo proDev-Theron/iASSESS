@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+    <events>
+		<event id="btnover">
+			<rollover>
+				<css name="btnOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="btnOutCss">this</css>
+			</rollout>
+		</event>
+
+		<event id="optionover">
+			<rollover>
+				<css name="optionOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="optionOutCss">this</css>
+			</rollout>
+		</event>
+		
+		<event id="selectandsubmit">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="select">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+			</click>
+		</event>
+
+		<event id="submit">
+			<click>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="reset">
+			<click>
+				<function name="reset">this</function>
+			</click>
+		</event>
+		
+        <event id="begin">
+            <click>
+                <anim type="remove" animtime="0" oncomplete="0">openingText</anim>
+                <function name="begin">this</function>
+            </click>
+        </event>
+
+        <event id="loadNextQuestion">
+            <click>
+                <function name="loadNextQuestion">this</function>
+            </click>
+        </event>
+		
+		<event id="restart">
+            <click>
+                <function name="restart">this</function>
+            </click>
+        </event>
+
+        <event id="showq1bg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">q1bg</anim>
+            </click>
+        </event>
+
+         <event id="hidepassbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="showpassbg">
+            <click>
+                <anim type="show" animtime="5" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="hidefailbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+
+        <event id="showfailbg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+    </events>    
+
+    <box id="failbg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="failbg" />
+    <box id="orangebg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="orangebg" />
+
+
+    <!--responsive timer-->
+    <!--2 column layout, timer on the right, moves to top center on phones-->
+    <box id="timerRow" position="absolute" x="0" y="0" anim="none" animtime="0.5" animdelay="1" class="col-md-10 col-md-offset-1">
+    	<box id="timerCol1" position="relative" class="col-md-6" />
+    	<box id="timerContainer" position="relative" class="col-md-6" />
+    </box>
+
+    <!--opening text-->
+    <box id="openingText" position="relative" anim="left" animtime="0.5" animdelay="1" class="col-md-10 col-md-offset-1 vertical-align" z-index="3">
+
+    	<text id="title" position="relative" margin-top="20" anim="none"><![CDATA[<h1 class="black">Multiple Choice Quiz Engine</h1><p class="p_16_black">Welcome to this short quiz.</p><p class="p_16_black">For each question, select the answer before your time runs out!</p>]]></text>
+
+    	<button id="goBtn" position="relative" height="40" width="100" margin-top="40" margin-bottom="20" anim="none" event="btnover,begin" target="title"><![CDATA[Let's go!]]></button>
+    </box>
+
+    <!--timed quiz-->
+    <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-10 col-md-offset-1">
+		<settings timer="true" timerx="0" timery="0"/>
+        
+		<!-- question 1 -->
+        <question id="q1" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question1" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Will I need to be a JavaScript programmer to build a quiz?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white cent">Yes</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white cent">No</p>]]></text>
+			</option>
+			<!--/options -->
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_correct1.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>All the questions, text, images, events and buttons are defined in XML so you can create your own quiz without changing any JavaScript.</p><p>You can also customise the timer by changing some simple settings and css. Or choose not to have a timer at all.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect1.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Nope!</p><p>All the questions, text, images, events and buttons are defined in XML so you can create your own quiz without changing any JavaScript.</p><p>You can also customise the timer by changing some simple settings and css. Or choose not to have a timer at all.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" width="150" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 2 -->
+        <question id="q2" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question2" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">The number of questions I can add is:</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option2_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Limited to 5</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option2_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Limited to 10</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option2_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Unlimited</p>]]></text>
+			</option>
+			<!--/options -->
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_correct2.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>You can add as many questions as you like.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect2.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>You can add as many questions as you like.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 3 -->
+        <question id="q3" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question3" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">If there is more than one correct option, can the engine handle it?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option3_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Yes. For example, this option is flagged as correct.</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option3_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">And this option is <i>also</i> flagged as correct.</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option3_3" position="relative" target="col1" x="match" width="100%" margin-bottom="20" anim="show" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">But this option is flagged as incorrect.</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<button id="submitBtn" position="relative" target="col1" x="match" float="left" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit"><![CDATA[<p class="genericBtn">Confirm</p>]]></button>
+			<button id="resetBtn" position="relative" target="col1" x="match" float="left" margin-left="10" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,reset"><![CDATA[<p class="genericBtn">Reset</p>]]></button>
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_correct3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Well done!</p><p>You selected all the correct answers. If you had selected <i>some</i> of the correct options, you would have generated "partially correct" feedback.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+
+			<fb id="partial" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="partialimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect3.jpg]]></image>
+
+					<text id="txt11" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Not quite.</p><p>You selected some but not <i>all</i> of the correct options.</p><p>This is the "partial" feedback.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Bad luck!</p><p>You didn't select any of the correct options.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 4 -->
+        <question id="q4" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question4" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Is option specific feedback supported?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option4_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Yes, this will generate feedback for option 1 (correct).</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option4_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Yes, this will generate feedback for option 2.</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Yes, this will generate feedback for option 3.</p>]]></text>
+			</option>
+			<!--/options -->
+			
+			<!-- feedbacks -->
+			<!--option specific feedback, override generic feedback-->
+			<fb id="1" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="fb1image" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_correct4.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Great!</p><p>This is the feedback for option 1 which is the correct option.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="2" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="fb2image" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect4.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Option 2?</p><p>This is specific feedback for option 2 and unfortunately that was <i>not</i> the correct option.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+
+			<fb id="3" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="fb3image" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect4.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Option 3?</p><p>This is the specific feedback for option 3 and unfortunately that was <i>not</i> the correct option.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 5 -->
+        <question id="q5" time="60">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question5" position="relative" target="col1" width="100%" x="0" margin-top="130" margin-bottom="20" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Can I do any of the following?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option5_1" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.5" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Change the time allowed for each question</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option5_2" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Not use a timer at all</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option5_3" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.7" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Use images as options instead of text</p>]]></text>
+			</option>
+
+			<!--option 4 -->
+			<option correct="true">
+				<text id="option5_4" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.8" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Set the passmark percentage</p>]]></text>
+			</option>
+
+			<!--option 5 -->
+			<option correct="true">
+				<text id="option5_5" position="relative" target="col1" x="match" width="100%" margin-bottom="5" anim="left" animtime="0.5" animdelay="0.9" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Change the animations and timings for individual elements</p>]]></text>
+			</option>
+
+			<!--option 6 -->
+			<option correct="true">
+				<text id="option5_6" position="relative" target="col1" x="match" width="100%" margin-bottom="20" anim="left" animtime="0.5" animdelay="1" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Change the styles, text, graphics and layout</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<button id="submitBtn" position="relative" target="col1" x="match" margin-bottom="40" width="100" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit" float="left"><![CDATA[<p class="genericBtn">Confirm</p>]]></button>
+			
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_correct5.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Yes!</p><p>You can do all of these things, just by changing XML attributes and css!</p>]]></text>
+
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Overall, how did I do?]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="partial" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="partialimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect5.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">You got some but not all.</p><p>Actually you can do <i>all</i> of these things, just by changing XML attributes and css!</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Overall, how did I do?]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="100" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[lib/assets/nasa_incorrect5.jpg]]></image>
+
+					<text id="txt1" position="relative" margin-bottom="30" anim="none"><![CDATA[<p class="p_24">Nope!</p><p>Actually you can do <i>all</i> of these things, just by changing XML attributes and css!</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="230" anim="none" event="btnover,loadNextQuestion"><![CDATA[Overall, how did I do?]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		
+		<!--generic timeout text-->
+		<timeout>
+			<box id="center" position="relative" height="100%"> 
+	            <box id="timeOut" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="1" ease="Bounce.easeOut" class="col-sm-8 col-sm-offset-2 vertical-align border timesupbg">
+
+					<text id="timeoutTxt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_42 grey">Times up!</p>]]></text>
+			
+					<button id="startAgainBtn" position="relative" x="10" margin-bottom="30" height="40" width="100" anim="none" event="btnover,restart"><![CDATA[Start again]]></button>
+				</box>
+			</box>
+        </timeout>
+
+
+        <!--score screen-->
+        <score masteryscore="80">
+           <fb id="pass" event="">
+            	<box id="center" position="relative" height="100%">
+	            	<box id="passTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border passbg">
+						
+						<text id="pass_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
+						<![CDATA[<p class="p_30 white glow">CONGRATULATIONS!</p><p class="p_24 orange glow">You scored [score]%</p>]]></text>
+						
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="140" anim="none" event="btnover,restart,hidepassbg"><![CDATA[Play again?]]></button>
+	                </box>
+                </box>
+            </fb>
+            
+            <fb id="fail" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Bad luck! You scored [score]%</p><p class="p_24 orange glow">Why not have another go?</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[Start again]]></button>
+	                </box> 
+                </box> 
+            </fb>
+        </score>
+
+    </custom>
+
+</data>
+

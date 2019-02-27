@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+    <events>
+		<event id="btnover">
+			<rollover>
+				<css name="btnOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="btnOutCss">this</css>
+			</rollout>
+		</event>
+
+		<event id="optionover">
+			<rollover>
+				<css name="optionOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="optionOutCss">this</css>
+			</rollout>
+		</event>
+		
+		<event id="selectandsubmit">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="select">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+			</click>
+		</event>
+
+		<event id="submit">
+			<click>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="reset">
+			<click>
+				<function name="reset">this</function>
+			</click>
+		</event>
+
+		<event id="sca">
+			<click>
+				<function name="sca">this</function>
+			</click>
+		</event>
+
+    </events>    
+
+
+    <!--MCQ-->
+    <custom type="mcq" id="mcq" position="relative" x="0" y="0" class="col-md-10 col-md-offset-1">
+        <settings correctx="-13" correcty="0" attempts="2"/>
+
+        <question id="q1" event="">
+
+    		<box id="leftcol" position="relative" class="col-md-6" />
+    		<box id="rightcol" position="relative" class="col-md-6" />
+
+    		<text id="question1" position="relative" target="leftcol" x="0" max-width="400" margin-top="50" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<h2 class="glow">Will I need to be a JavaScript programmer to build a multiple choice question?</h2>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option1_1" position="relative" target="leftcol" x="match" max-width="400" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Yes</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option1_2" position="relative" target="leftcol" x="match" max-width="400" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">No</p>]]></text>
+			</option>
+
+			<!--option 3 -->	
+			<option correct="false">
+				<text id="option1_3" position="relative" target="leftcol" x="match" max-width="400" margin-bottom="20" anim="show" animtime="0.5" animdelay="0.6" event="optionover,select" class="optionBox"><![CDATA[<p class="p_16 white">Not sure</p>]]></text>
+			</option>
+			<!--/options -->
+
+			<button id="submitBtn" position="relative" target="leftcol" x="match" float="left" anim="disabled" animtime="0.3" animdelay="0.7" event="btnover,submit"><![CDATA[<p class="genericBtn">Confirm</p>]]></button>
+			<button id="resetBtn" position="relative" target="leftcol" x="match" float="left" margin-left="10" margin-bottom="40" anim="disabled" animtime="0.3" animdelay="0.7" z-index="2" event="btnover,reset"><![CDATA[<p class="genericBtn">Reset</p>]]></button>
+			<button id="scaBtn" position="relative" target="leftcol" x="match" float="left" margin-left="10" margin-bottom="40"  anim="disabled" animtime="0.3" animdelay="0.7" z-index="2" event="btnover,sca"><![CDATA[<p class="genericBtn">See correct answer</p>]]></button>
+
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+
+				<text id="fb" position="relative" target="rightcol" margin-top="200" max-width="400" anim="right" animtime="0.5" class="lightBox" clear="both"><![CDATA[<p class="p_24">Correct!</p><p>All the text, images, events and buttons are defined in XML so you can create your own question without changing any JavaScript.</p>]]></text>
+				
+				<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+			</fb>
+			
+			<fb id="fail" event="">	
+				
+				<text id="fb" position="relative" target="rightcol" margin-top="200" max-width="400" anim="right" animtime="0.5" class="lightBox" clear="both"><![CDATA[<p class="p_24">Nope!</p><p>All the text, images, events and buttons are defined in XML so you can create your own question without changing any JavaScript.</p>]]></text>
+				
+				<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+			</fb>
+
+			<fb id="generic">
+
+				<text id="fb" position="relative" target="rightcol" margin-top="200" max-width="400" anim="right" animtime="0.5" class="lightBox" clear="both"><![CDATA[<p class="p_24">The correct answer is No!</p><p>All the text, images, events and buttons are defined in XML so you can create your own question without changing any JavaScript.</p>]]></text>
+				
+				<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+			</fb>
+		</question>
+
+    </custom>
+
+</data>
+
