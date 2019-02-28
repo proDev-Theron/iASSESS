@@ -2,7 +2,7 @@
 if (isset($_GET['timezone'])) {
   $timezone = new DateTimeZone($_GET['timezone']);
 } else {
-  $timezone = new DateTimeZone("Europe/London");
+  $timezone = new DateTimeZone("Asia/Manila");
 }
 $date = new DateTime();
 $date->setTimezone($timezone);

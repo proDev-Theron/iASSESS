@@ -110,9 +110,9 @@
 
     	<image id="img" position="relative" margin-bottom="30" anim="none" class="center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
 
-    	<text id="title" position="relative" anim="none"><![CDATA[<h1 class="m-b-md p-t-md">Welcome to iASSESS</h1><p class="p-t-md">Experience credible self-assessment for Computer Systems Servicing NCII</p><p class="p_16_black">Start when you're ready and good luck!</p>]]></text>
+    	<text id="title" position="relative" anim="none"><![CDATA[<h1 class="m-b-md p-t-md">Welcome to iASSESS</h1><p class="p-t-md"><p>For each question, select the answer before your time runs out!</p><p class="p_16_black">Press "Start" when you're ready and do your best!</p>]]></text>
 
-    	<button id="goBtn" position="relative" height="40" margin-top="20" display="inline-block" width="100" anim="none" event="btnover,begin" target="title" class="center-block"><![CDATA[Let's go!]]></button>
+    	<button id="goBtn" position="relative" height="40" margin-top="20" display="inline-block" width="100" anim="none" event="btnover,begin" target="title" class="center-block"><![CDATA[START]]></button>
     </box>
 
     <!--timed quiz-->
@@ -120,31 +120,39 @@
 		<settings timer="true" timerx="570" timery="80"/>
         
 		<!-- question 1 -->
-        <question id="q1" time="100" event="">
+        <question id="q1" time="15" event="">
 
-    		<image id="img" position="relative" margin-top="30" margin-bottom="40" anim="show" animtime="1" animdelay="0" class="img-responsive center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
-
-    		<text id="question" position="relative" x="0" margin-bottom="30" anim="show" animtime="1" animdelay="0.1" clear="both"><![CDATA[<p class="p_24">What is the set-up where each computer acts as client and server and in which each user shares other’s file and data, including printers?</p>]]></text>
+    		<text id="question" position="relative" x="0" margin-bottom="30" anim="show" animtime="1" animdelay="0.1" clear="both"><![CDATA[<p class="p_24">Which of the following items does not belong in the 5s system?</p>]]></text>
 
     		<box id="hcenter" position="relative" height="80" width="210" margin="0 auto" anim="none"/>
 
 			<!--option 1 -->
-			<option correct="false">
-				<text id="option1_1" target="hcenter" position="absolute" width="100" margin-right="10" anim="show" animtime="1" animdelay="0.2" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Peer to peer set-up</p>]]></text>
+			<option correct="true">
+				<text id="option1_1" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.2" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Sit</p>]]></text>
 			</option>
 			
 			<!--option 2 -->	
-			<option correct="true">
-				<text id="option1_2" target="hcenter" position="absolute" x="110" width="100" margin-bottom="30" anim="show" animtime="1" animdelay="0.3" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Client/Server set-up</p>]]></text>
+			<option correct="false">
+				<text id="option1_2" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.3" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Shine</p>]]></text>
+			</option>
+
+			<!--option 3 -->	
+			<option correct="false">
+				<text id="option1_3" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.4" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Sustain</p>]]></text>
+			</option>
+			
+			<!--option 4 -->	
+			<option correct="false">
+				<text id="option1_4" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.4" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Set in Order</p>]]></text>
 			</option>
 			<!--/options -->
 			
 			<!-- feedbacks -->
 			<fb id="pass" event="">	
 
-					<image id="passimage" position="relative" margin-bottom="30" anim="none" clear="both" class="img-responsive center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
+					<image id="passimage" position="relative" margin-bottom="30" anim="none" clear="both" class="img-responsive center-block"><![CDATA[../img/quiz/1.jpg]]></image>
 
-					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>All the questions, text, images, events and buttons are defined in XML so you can create your own quiz without changing any JavaScript.</p><p>You can also customise the timer by changing some simple settings and css. Or choose not to have a timer at all.</p>]]></text>
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>The 5s system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]></text>
 			
 					<button id="nextQBtn" position="relative" width="150" display="inline-block" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
 
@@ -156,7 +164,7 @@
 
 				<image id="failimage" position="relative" margin-bottom="30" anim="none" class="img-responsive center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
 
-				<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Nope!</p><p>All the questions, text, images, events and buttons are defined in XML so you can create your own quiz without changing any JavaScript.</p><p>You can also customise the timer by changing some simple settings and css. Or choose not to have a timer at all.</p>]]></text>
+				<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Nope!</p><p>The 5s system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]></text>
 		
 				<button id="nextQBtn" position="relative" width="150" display="inline-block" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
 
@@ -167,32 +175,35 @@
 		<!-- question 2 -->
         <question id="q2" time="15" event="">
 
-    		<image id="img" position="relative" margin-top="30" margin-bottom="30" anim="show" animtime="1" animdelay="0" class="img-responsive center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
-
-    		<text id="question" position="relative" x="0" margin-bottom="40" anim="show" animtime="1" animdelay="0.1" clear="both"><![CDATA[<p class="p_24">What type of network would you recommend if your client has only few computer units?</p>]]></text>
+    		<text id="question" position="relative" x="0" margin-bottom="40" anim="show" animtime="1" animdelay="0.1" clear="both"><![CDATA[<p class="p_24">What do you call to that setup utility where you configure the “Boot Priority Settings” where you can select the disk that contains the Operating System?</p>]]></text>
 
 			<!--option 1 -->
 			<option correct="false">
-				<text id="option1_1" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.2" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Peer to peer network</p>]]></text>
+				<text id="option1_1" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.2" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">OHS</p>]]></text>
 			</option>
 			
 			<!--option 2 -->	
 			<option correct="false">
-				<text id="option1_2" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.3" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Personal area network</p>]]></text>
+				<text id="option1_2" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.3" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">CMOS</p>]]></text>
 			</option>
 
 			<!--option 3 -->	
 			<option correct="true">
-				<text id="option1_3" position="relative" margin-bottom="30" anim="show" animtime="1" animdelay="0.4" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Client/Server network</p>]]></text>
+				<text id="option1_3" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.4" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">BIOS</p>]]></text>
+			</option>
+			
+			<!--option 4 -->	
+			<option correct="false">
+				<text id="option1_4" position="relative" margin-bottom="10" anim="show" animtime="1" animdelay="0.4" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">ISO</p>]]></text>
 			</option>
 			<!--/options -->
-			
+
 			<!-- feedbacks -->
 			<fb id="pass" event="">	
 
 					<image id="passimage" position="relative" margin-bottom="30" anim="none" clear="both" class="img-responsive center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
 
-					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>You can add as many questions as you like.</p>]]></text>
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]></text>
 			
 					<button id="nextQBtn" position="relative" width="150" display="inline-block" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
 
@@ -204,7 +215,7 @@
 				
 				<image id="failimage" position="relative" margin-bottom="30" anim="none" class="img-responsive center-block"><![CDATA[http://www.placehold.it/300x200]]></image>
 
-				<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>You can add as many questions as you like.</p>]]></text>
+				<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]></text>
 		
 				<button id="nextQBtn" position="relative" width="150" display="inline-block" margin-bottom="10" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
 
