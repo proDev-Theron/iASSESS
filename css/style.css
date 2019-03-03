@@ -1,14 +1,3 @@
-/* 
-Template Name: GetLeads
-Theme URL: http://www.themedept.com/demo/getleads/
-Description: Landing Page Pack with Page Builder    
-Author: Themedept  
-Author URL: http://www.themedept.com
-Version: 1.5
-Tags: Landing Page, Multipurpose Landing page, Html5, Css, Bootstrap, Javascript, Startup Landing page, Agency Landing page, Corporate Landing page, Business Landing page, Marketing Landing page, 
-App Landing page, WebApp Landing page, Construction Landing page, E-learning Landing page, E-book Landing page, Event Landing page, Conference Landing page, Restaurant Landing page, Real Estate Landing page, 
-Hotel Landing page, Software Landing page, Medical Landing page, Hosting Landing page, Gym Landing page, Wedding Landing page, Travel Landing Page, Yoga Landing Page
-*/
 
 /* ------------------------------------------ */
 /*             TABLE OF CONTENTS
@@ -72,7 +61,7 @@ a:link,
 a:visited, 
 a:hover, 
 a:active {
-    color: #439fe0;
+    color: #525e6c;
     text-decoration: none;
     outline: 0;
     -webkit-transition: all 0.25s ease-out;
@@ -122,15 +111,7 @@ iframe {
     height: 100%;
 }
 
-/* for page builder */
-.videoWrapper > .frameCover {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background: none;
-}
+
 
 /*------------------------------------------------------------------*/
 /*   Internet Explorer 10 in Windows 8 and Windows Phone 8 Bug fix
@@ -1088,39 +1069,6 @@ textarea {
     padding: 14px 25px 15px;
 }
 
-/* paypal form */
-.form-paypal .form-group .form-control {
-    padding-left: 10px;
-}
-
-.form-paypal select.form-control {
-    height: 57px;
-}
-
-.form-paypal.bg-black-trs {
-    padding: 30px 40px 10px;
-    border-radius: 5px;
-    box-shadow: -2px -2px 6px 0 rgba(0,0,0,.1);
-    background-color: #525e6c;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* mailchimp response */
-.mc-response {
-    font-size: 18px;
-    line-height: 22px;
-    font-weight: 900;
-    margin-top: 10px;
-    color: #fff;
-    background-color: #8e44ad;
-    padding: 20px;
-    border-radius: 5px;
-    -webkit-transition:all 2s ease-in-out;
-    -moz-transition:all 2s ease-in-out;
-    -o-transition:all 2s ease-in-out;
-    transition:all 2s ease-in-out;
-}
-
 /* contact form response */
 .success,
 .failed {
@@ -1629,7 +1577,7 @@ textarea {
 
 .navbar-nav>li>a:hover {
     opacity: 1;
-    background-color: transparent;
+    background-color: #2e3234;
 }
 
 .navbar-nav>.active>a, 
@@ -1657,7 +1605,7 @@ textarea {
 /*   Navbar Transparent/ Navbar Color
 /*------------------------------------------*/
 .navbar.bg-color {
-    background-color: #525e6c;
+    background-color: #fafafa;
 }
 
 .navbar.bg-transparent {
@@ -1668,7 +1616,7 @@ textarea {
 }
 
 .navbar.bg-transparent.top-nav-collapse {
-    background-color: #fff;
+    background-color: #fafafa;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -1693,7 +1641,7 @@ textarea {
 }
 
 .navbar.bg-transparent.top-nav-collapse .navbar-nav>li>a {
-    color: #404B55;
+    color: #fafaf9;
     opacity: 0.8;
 }
 
@@ -4525,4 +4473,6 @@ input.toggle-round-flat:checked + label:after {
 .comments-list .comment-info .reply i{
     margin-right: 2px;
 }
+
+
 

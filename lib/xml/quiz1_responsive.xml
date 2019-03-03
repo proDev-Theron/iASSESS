@@ -122,7 +122,7 @@
 		<!-- question 1 -->
         <question id="q1" time="15" event="">
 
-    		<text id="question" position="relative" x="0" margin-bottom="30" anim="show" animtime="1" animdelay="0.1" clear="both"><![CDATA[<p class="p_24">Which of the following items does not belong in the 5s system?</p>]]></text>
+    		<text id="question" position="relative" x="0" margin-bottom="30" anim="show" animtime="1" animdelay="0.1" clear="both"><![CDATA[<p class="p_24">Which of the following items does not belong in the 5S system?</p>]]></text>
 
     		<box id="hcenter" position="relative" height="80" width="210" margin="0 auto" anim="none"/>
 

@@ -10,22 +10,19 @@
 
     <meta name="description" content="iASSESS - The Online Self Assessment Web Application for TESDA's Computer Systems Servicing NCII">
     <meta name="author" content="Theron Adrianne Bueno">
-
-    <!-- FAVICON  -->
-    <!-- Place your favicon.ico in the images directory -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
     
     <!-- =========================
        STYLESHEETS 
     ============================== -->
+		
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
 
     <!-- FONT ICONS -->
     <link rel="stylesheet" href="css/icons/iconfont.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-     
+		
     <!-- GOOGLE FONTS -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
     
@@ -34,6 +31,7 @@
     <link rel="stylesheet" href="css/plugins/owl.carousel.css">
     <link rel="stylesheet" href="css/plugins/loaders.css">
     <link rel="stylesheet" href="css/plugins/animate.css">
+	<link rel="stylesheet" href="css/plugins.css"><!--from PROUI-->
 
     <!-- CUSTOM STYLESHEET -->
     <link rel="stylesheet" href="css/style.css">
@@ -47,37 +45,34 @@
 
 <body data-spy="scroll" data-target="#main-navbar">
 
-
-    <div class="loader bg-white">
-        <div class="loader-inner ball-scale-ripple-multiple vh-center"> </div>
+    <div class="loader bg-dark">
+    <div class="loader-inner ball-scale-ripple-multiple vh-center">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     </div>
 
-
     <div class="main-container" id="page">
-
-        
+  
         <header id="nav2-1">
             
-            <nav class="navbar navbar-fixed-top bg-transparent" id="main-navbar" role="navigation">
+            <nav class="navbar navbar-fixed-top bg-transparent logo-white" id="main-navbar" role="navigation">
 
                 
                 <div class="container">
                     
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                        
+						<a href="" class="navbar-brand smooth-scroll"><img src="img/navbar-logo.png" alt="logo" class="navbar-btn"></a>
+						
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        
-                        <!-- Image Logo -->
-                        <!-- note:
-                            recommended sizes
-                                width: 150px;
-                                height: 35px;
-                        -->
-                        <a href="" class="navbar-brand smooth-scroll"><img src="img/navbar-logo.png" alt="logo" class="navbar-btn"></a>
+
 
                   </div><!-- /End Navbar Header -->
 
@@ -92,7 +87,8 @@
 
                 </div><!-- /End Container -->
             </nav><!-- /End Navbar -->
-        </header><!-- =========================
+        </header>
+		<!-- =========================
             HERO SECTION
         ============================== -->
         <section id="hero4" class="p-b-0 bg-edit bg-dark">
@@ -130,7 +126,9 @@
                     </div><!-- /End Col -->
                 </div><!-- /End Row -->
             </div><!-- /End Container -->
-        </section><!-- =========================
+        </section>
+		
+		<!-- =========================
            CONTENT SECTION
         ============================== -->
         <section id="content10-1" class="p-y-lg content-dashboard content-align-md bg-edit">
@@ -150,7 +148,9 @@
                 </div><!-- /End Row -->
             </div><!-- /End Container -->
 
-        </section><!-- =========================
+        </section>
+		
+		<!-- =========================
            CONTENT SECTION
         ============================== -->
         <section id="content8-2" class="p-t-md p-b-0 content-block content-align-md bg-edit bg-dark">
@@ -170,7 +170,9 @@
             </div><!-- /End Container-->
 
         </section>
-        <!-- /End Content Section --><!-- =========================
+        <!-- /End Content Section -->
+		
+		<!-- =========================
            FEATURES SECTION 
         ============================== -->
         <section id="features2-1" class="p-y-lg bg-edit">
@@ -261,9 +263,12 @@
                 </div><!-- /End Features-Block -->
             </div><!-- /End Container -->
 
-        </section><!-- =========================
+        </section>
+		
+		<!-- =========================
              CONTACT SECTION
         ============================== -->
+		
         <section id="contact3-1" class="p-y-lg contact bg-edit">
             <div class="container">
                 <!-- Section Header -->
@@ -323,9 +328,11 @@
                 </div><!-- /End Row -->
             
             </div><!-- /End Container -->
-        </section><!-- =========================
+        </section>
+		<!-- =========================
              FOOTER
         ============================== -->
+		
         <footer id="footer5-1" class="p-y-md footer f5 bg-edit bg-grey">
             <div class="container">    
                 <div class="row">
@@ -341,7 +348,7 @@
                     <div class="col-sm-12 text-center">
                         <div class="m-t-md">
                             <p><small>
-                                © Copyright 2019 - <a href="https://www.linkedin.com/prodev-theron">Theron Adrianne Bueno</a> - All Rights Reserved</small>
+                                © Copyright 2019 - <a href="https://www.linkedin.com/in/prodev-theron">Theron Adrianne Bueno</a> - All Rights Reserved</small>
                             </p>    
                         </div>
                     </div>
@@ -350,28 +357,20 @@
         </footer></div><!-- /End Main Container -->
 
     <!-- Back to Top Button -->
-    <!--
+    
     <a href="#" class="top">Top</a>
-    -->
+    
 
 
     <!-- =========================
          SCRIPTS 
     ============================== -->
-    <script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
 	<script src="js/plugins/jquery1.11.2.min.js"></script>
     <script src="js/plugins/bootstrap.min.js"></script>
     <script src="js/plugins/jquery.easing.1.3.min.js"></script>
-    <script src="js/plugins/jquery.countTo.js"></script>
-    <script src="js/plugins/jquery.formchimp.min.js"></script>
-    <script src="js/plugins/jquery.jCounter-0.1.4.js"></script>
     <script src="js/plugins/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins/jquery.vide.min.js"></script>
     <script src="js/plugins/owl.carousel.min.js"></script>
-    <script src="js/plugins/twitterFetcher_min.js"></script>
     <script src="js/plugins/wow.min.js"></script>
-    <script src="js/plugins/picker.js"></script>
-    <script src="js/plugins/picker.date.js"></script>
     <!-- Custom Script -->
     <script src="js/custom.js"></script>
 
