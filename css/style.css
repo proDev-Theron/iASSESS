@@ -1577,7 +1577,7 @@ textarea {
 
 .navbar-nav>li>a:hover {
     opacity: 1;
-    background-color: #2e3234;
+    background-color: #f1c40f;
 }
 
 .navbar-nav>.active>a, 
