@@ -10,22 +10,19 @@
 
     <meta name="description" content="iASSESS - The Online Self Assessment Web Application for TESDA's Computer Systems Servicing NCII">
     <meta name="author" content="Theron Adrianne Bueno">
-
-    <!-- FAVICON  -->
-    <!-- Place your favicon.ico in the images directory -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
     
     <!-- =========================
        STYLESHEETS 
     ============================== -->
+		
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
 
     <!-- FONT ICONS -->
     <link rel="stylesheet" href="css/icons/iconfont.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-     
+		
     <!-- GOOGLE FONTS -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
     
@@ -34,9 +31,8 @@
     <link rel="stylesheet" href="css/plugins/owl.carousel.css">
     <link rel="stylesheet" href="css/plugins/loaders.css">
     <link rel="stylesheet" href="css/plugins/animate.css">
-    <link rel="stylesheet" href="css/plugins/pickadate-default.css">
-    <link rel="stylesheet" href="css/plugins/pickadate-default.date.css">
-    
+	<link rel="stylesheet" href="css/plugins.css"><!--from PROUI-->
+
     <!-- CUSTOM STYLESHEET -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -49,50 +45,50 @@
 
 <body data-spy="scroll" data-target="#main-navbar">
 
-
-    <div class="loader bg-white">
-        <div class="loader-inner ball-scale-ripple-multiple vh-center"> </div>
+    <div class="loader bg-dark">
+    <div class="loader-inner ball-scale-ripple-multiple vh-center">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     </div>
 
-
     <div class="main-container" id="page">
-
-        
+  
         <header id="nav2-1">
             
-            <nav class="navbar navbar-fixed-top bg-transparent" id="main-navbar" role="navigation">
+            <nav class="navbar navbar-fixed-top bg-transparent logo-white" id="main-navbar" role="navigation">
 
                 
                 <div class="container">
                     
                     <div class="navbar-header">
-                        <!-- Menu Button for Mobile Devices -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                        </button>
                         
-                        <!-- Image Logo -->
-                        <!-- note:
-                            recommended sizes
-                                width: 150px;
-                                height: 35px;
-                        -->
-                        <a href="" class="navbar-brand smooth-scroll"><img src="img/navbar-logo.png" alt="logo"></a>
+						<a href="" class="navbar-brand smooth-scroll"><img src="img/navbar-logo.png" alt="logo" class="navbar-btn"></a>
+						
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
 
                   </div><!-- /End Navbar Header -->
 
                     <div class="collapse navbar-collapse text-uppercase" id="navbar-collapse">
                         <!-- Menu Links -->
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="" class="smooth-scroll">Assessment</a></li>
-                            <li><a href="" class="btn-nav btn-blue smooth-scroll">Take Survey</a></li>
-                            <li><a href="" class="smooth-scroll">About Us</a></li>
+                            <li><a href="assessment.html" class="smooth-scroll btn-blue navbar-btn">Assessment</a></li>
+                            <li><a href="https://tinyurl.com/iAssessIVSHS" class="btn-green smooth-scroll navbar-btn">Take Survey</a></li>
+                            <li><a href="about.html" class="smooth-scroll navbar-btn btn-red">About Us</a></li>
                         </ul><!-- /End Menu Links -->
                     </div><!-- /End Navbar Collapse -->
 
                 </div><!-- /End Container -->
             </nav><!-- /End Navbar -->
-        </header><!-- =========================
+        </header>
+		<!-- =========================
             HERO SECTION
         ============================== -->
         <section id="hero4" class="p-b-0 bg-edit bg-dark">
@@ -101,8 +97,8 @@
                     <div class="col-md-10 col-md-offset-1 text-center">
                         <h1 class="text-white m-b-md p-t-md">Want to know how competent you are in Computer Systems Servicing?</h1>
                         <p class="lead text-white m-b-md f-w-700">We can help you instantly now! Get results in just 5 minutes. <br>Feeling competent? Let us take your skills to the next level.</p>
-                        <a href="#" class="btn btn-md btn-blue text-uppercase">Take the Online Assessment</a>
-                        <a href="#" class="btn btn-md btn-green text-uppercase">Answer the Survey</a>
+                        <a href="assessment.html" class="btn btn-md btn-blue text-uppercase">Take the Online Assessment</a>
+                        <a href="https://tinyurl.com/iAssessIVSHS" class="btn btn-md btn-green text-uppercase">Answer the Survey</a>
                     </div>
                 </div><!-- /End Row -->
             </div><!-- /End Container -->
@@ -130,7 +126,9 @@
                     </div><!-- /End Col -->
                 </div><!-- /End Row -->
             </div><!-- /End Container -->
-        </section><!-- =========================
+        </section>
+		
+		<!-- =========================
            CONTENT SECTION
         ============================== -->
         <section id="content10-1" class="p-y-lg content-dashboard content-align-md bg-edit">
@@ -150,7 +148,9 @@
                 </div><!-- /End Row -->
             </div><!-- /End Container -->
 
-        </section><!-- =========================
+        </section>
+		
+		<!-- =========================
            CONTENT SECTION
         ============================== -->
         <section id="content8-2" class="p-t-md p-b-0 content-block content-align-md bg-edit bg-dark">
@@ -170,7 +170,9 @@
             </div><!-- /End Container-->
 
         </section>
-        <!-- /End Content Section --><!-- =========================
+        <!-- /End Content Section -->
+		
+		<!-- =========================
            FEATURES SECTION 
         ============================== -->
         <section id="features2-1" class="p-y-lg bg-edit">
@@ -202,7 +204,7 @@
                     <!-- Feature Item -->
                     <div class="col-sm-4"> 
                         <img src="images/flat7.png" alt="">
-                        <h4>Lorem Ipsum</h4>
+                        <h4>Modern Design</h4>
                         <p>Lorem Ipsum dolor sit amet, consectetur</p>
                     </div>
                 </div>
@@ -227,43 +229,46 @@
                 <div class="row text-center features-block c3 text-white">
                     <div class="col-md-4"> 
                         <i class="icon-target2"></i>
-                        <h4>Generate More Leads</h4>
+                        <h4>Efficiency</h4>
                         <p>Qualisque erroribus contentiones ei duo. Eum at elitr zril oratio, cu diam aliquam maluisset his delenit alienum.</p>
                     </div>
                     <div class="col-md-4"> 
                         <i class="icon-wallet2"></i>
-                        <h4>Increase Revenue &amp; Sales</h4>
+                        <h4>Credibility</h4>
                         <p>Libris tacimates aliquando id his, rebum erant disputando et eum. Ea ipsum tantas splendide quo primis commodo.</p>
                     </div>
                     <div class="col-md-4"> 
                         <i class="icon-linegraph"></i>
-                        <h4>Improve Website Conversions</h4>
+                        <h4>Multipurpose</h4>
                         <p>Prima minim mei in, sea latine eligendi posidonium ei, dolorum posidonium neglegentur mea ne meis homero.</p>
                     </div>
-                </div><!-- /End Features-Block -->
+                </div>
 
                 <div class="row text-center features-block c3 new-row-md text-white">
                     <div class="col-md-4"> 
                         <i class="icon-compass2"></i>
-                        <h4>Gain Brand Visibility</h4>
+                        <h4>Security</h4>
                         <p>Postea noster hendrerit pri ne, ius impedit expetendis vituperata ei. Mei euismod adipisci eu ipsum accusam.</p>
                     </div>
                     <div class="col-md-4"> 
                         <i class="icon-search3"></i>
-                        <h4>Search Engine Optimization</h4>
+                        <h4>Easy to use</h4>
                         <p>Quando tantas in duo, alii repudiandae ad sea. Vim tempor vulputate ea. Cum ea scripta petentium adhuc mollis.</p>
                     </div>
                     <div class="col-md-4"> 
                         <i class="icon-chat3"></i>
-                        <h4>Reduce Customer Attrition</h4>
+                        <h4>Free of Distractors</h4>
                         <p>Bonorum singulis et has, ex eos amet iusto principes, ea qui iriure nusquam. Reque errem mucius no usu.</p>
                     </div>
                 </div><!-- /End Features-Block -->
             </div><!-- /End Container -->
 
-        </section><!-- =========================
+        </section>
+		
+		<!-- =========================
              CONTACT SECTION
         ============================== -->
+		
         <section id="contact3-1" class="p-y-lg contact bg-edit">
             <div class="container">
                 <!-- Section Header -->
@@ -307,7 +312,7 @@
                         <!-- Map and Contact Info -->
                         <h4 class="f-w-900 m-b-md">Where we are</h4>
                         <div class="m-b-md">
-                            <iframe class="mini-map" src="https://www.google.com/maps/place/Ignacio+Villamor+Senior+High+School/@14.5766288,121.009018,69m/data=!3m1!1e3!4m5!3m4!1s0x3397c96596a6b2b7:0x233c970341736d8a!8m2!3d14.5765822!4d121.0090617" style="border:0" allowfullscreen=""></iframe>
+                            <iframe class="mini-map" src="https://maps.google.com/maps?q=Ignacio%20Villamor%20Senior%20High%20School&t=m&z=16&output=embed&iwloc=near"></iframe>
                         </div>
                         <div class="col-sm-6 p-l-0 mini-info">
                             <h5 class="f-w-900">Office Address</h5>
@@ -323,9 +328,11 @@
                 </div><!-- /End Row -->
             
             </div><!-- /End Container -->
-        </section><!-- =========================
+        </section>
+		<!-- =========================
              FOOTER
         ============================== -->
+		
         <footer id="footer5-1" class="p-y-md footer f5 bg-edit bg-grey">
             <div class="container">    
                 <div class="row">
@@ -333,7 +340,7 @@
                         <div class="footer-links">
                             <img alt="Logo" src="img/navbar-logo.png">
                             <p>Created with ♥ for Ignacio Villamor Senior High School</p>
-                            <a class="btn btn-md btn-shadow btn-green" href="http://ibvillamorshs.depedmanila.com">Enroll Now</a>
+                            <a class="btn btn-md btn-shadow btn-green" href="http://ignaciovillamorshs.depedmanila.com">Enroll Now</a>
                         </div>
                     </div>
                 </div>
@@ -341,7 +348,7 @@
                     <div class="col-sm-12 text-center">
                         <div class="m-t-md">
                             <p><small>
-                                © Copyright 2019 - <a href="https://www.linkedin.com/prodev-theron">Theron Adrianne Bueno</a> - All Rights Reserved</small>
+                                © Copyright 2019 - <a href="https://www.linkedin.com/in/prodev-theron">Theron Adrianne Bueno</a> - All Rights Reserved</small>
                             </p>    
                         </div>
                     </div>
@@ -350,28 +357,20 @@
         </footer></div><!-- /End Main Container -->
 
     <!-- Back to Top Button -->
-    <!--
+    
     <a href="#" class="top">Top</a>
-    -->
+    
 
 
     <!-- =========================
          SCRIPTS 
     ============================== -->
-    <script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
 	<script src="js/plugins/jquery1.11.2.min.js"></script>
     <script src="js/plugins/bootstrap.min.js"></script>
     <script src="js/plugins/jquery.easing.1.3.min.js"></script>
-    <script src="js/plugins/jquery.countTo.js"></script>
-    <script src="js/plugins/jquery.formchimp.min.js"></script>
-    <script src="js/plugins/jquery.jCounter-0.1.4.js"></script>
     <script src="js/plugins/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins/jquery.vide.min.js"></script>
     <script src="js/plugins/owl.carousel.min.js"></script>
-    <script src="js/plugins/twitterFetcher_min.js"></script>
     <script src="js/plugins/wow.min.js"></script>
-    <script src="js/plugins/picker.js"></script>
-    <script src="js/plugins/picker.date.js"></script>
     <!-- Custom Script -->
     <script src="js/custom.js"></script>
 
