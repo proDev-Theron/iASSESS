@@ -1,13 +1,13 @@
 @charset "utf-8";
 
 *{margin:0;padding:0;}
-html{height:100%;background:#EFF1F4 no-repeat center center fixed; 
+html{height:100%;background:##EFF1F4 url("../../img/logo-black.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;}
 
-body{font-family: 'Lato', 'Helvetica Neue', Helvitica, Arial sans-serif;background:transparent;color:#525e6c;font-size:14px;
+body{font-family: 'Lato', 'Helvetica Neue', sans-serif ;background:transparent;color:#4b4b40;font-size:14px;
 -webkit-animation-delay: 0.1s;
 -webkit-animation-name: fontfix;
 -webkit-animation-duration: 0.1s;
@@ -20,12 +20,12 @@ body{font-family: 'Lato', 'Helvetica Neue', Helvitica, Arial sans-serif;backgrou
     to   { opacity: 1; }
 }
 
-h1{font-size:60px;color: #525e6c;margin-bottom: 30px;}
-h2{font-size:48px;color: #525e6c;margin-bottom: 30px;}
+h1{font-size:34px;color: #4b4b40;margin-bottom: 30px;}
+h2{font-size:34px;color: #439FE0;margin-bottom: 30px;}
 div, p, a, li, td { -webkit-text-size-adjust:none; }
-p{font-size:20px;line-height:21px;margin-bottom:12px;color:#525e6c;}
+p{font-size:14px;line-height:21px;margin-bottom:12px;color:#4b4b40;}
 p:last-child{margin-bottom:0px;}
-input{background:#525e6c;font-size:18px;font-weight:bold;color:#fff;padding:6px 10px 6px 10px;border:none;-webkit-appearance:none;border-radius:0px; -moz-border-radius:0px;font-family: 'Lato', sans-serif;}
+input{background:#4b4b40;font-size:14px;font-weight:bold;color:#f9f9f9;padding:6px 10px 6px 10px;border:none;-webkit-appearance:none;border-radius:0px; -moz-border-radius:0px;font-family: 'Lato', 'Helvetica Neue', sans-serif;}
 img{display:block;} /* remove bottom padding */ 
 
 .passbg{background:transparent url("../assets/nasa_pass.jpg") no-repeat; 
@@ -49,14 +49,14 @@ img{display:block;} /* remove bottom padding */
   background-size: cover;
 }
 
-.orangebg{background:rgba #439FE0;}
-.border{border:2px solid #fff;}
-.lightBox{background:rgba(255,255,255,0.9);padding:20px;border-radius:0px; -moz-border-radius:0px;border:1px solid #ddd;}
+.orangebg{background:rgba(253, 199, 70, 1);}
+.border{border:2px solid #f9f9f9;}
+.lightBox{background:rgba(55,255,255,0.9);padding:20px;border-radius:0px; -moz-border-radius:0px;border:1px solid #ddd;}
 
 #timeoutContainer{height:100%;} /* allows for vertical alignment */
 #scoreContainer{height:100%;} /* allows for vertical alignment */
 .glow{text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);}
-.white{color:#fff;}
+.white{color:#f9f9f9;}
 .black{color:#111;}
 .grey{color:#666;}
 .orange{color:#f7c160;}
@@ -70,18 +70,18 @@ img{display:block;} /* remove bottom padding */
 
 
 .mcqRadioBtn{width:12px;height:12px;background:#fff;border:1px solid #999;border-radius:10px; -moz-border-radius:10px;}
-.optionBox{background:#525e6c;padding:8px;border:none;border-radius:0px; -moz-border-radius:0px;overflow:hidden !important;}
-.optionOverCss{background:#f1c40f;padding:8px;border:none;border-radius:0px; -moz-border-radius:0px;}
-.optionOverCss p{color:#fafafa;}
-.optionOutCss{background:#525e6c;color:#f1c40f;padding:8px;border:none;border-radius:0px; -moz-border-radius:0px;
+.optionBox{background:#4b4b40;padding:8px;border:none;border-radius:0px; -moz-border-radius:0px;overflow:hidden !important;}
+.optionOverCss{background:#fff;padding:8px;border:none;border-radius:0px; -moz-border-radius:0px;}
+.optionOverCss p{color:#4b4b40;}
+.optionOutCss{background:#4b4b40;color:#fff;padding:8px;border:none;border-radius:0px; -moz-border-radius:0px;
 	-webkit-transition: background-color 500ms linear;
     -moz-transition: background-color 500ms linear;
     -o-transition: background-color 500ms linear;
     -ms-transition: background-color 500ms linear;
     transition: background-color 500ms linear;}
 
-.btnOverCss input{background:#f1c40f;;color:#EFF1f4;}
-.btnOutCss input{background:#525e6c;color:#EFF1F4;
+.btnOverCss input{background:#fff;color:#4b4b40;}
+.btnOutCss input{background:#4b4b40;color:#fff;
 -webkit-transition: background-color 500ms linear;
     -moz-transition: background-color 500ms linear;
     -o-transition: background-color 500ms linear;
