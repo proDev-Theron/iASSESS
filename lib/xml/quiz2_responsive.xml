@@ -113,448 +113,256 @@
     <!--opening text-->
     <box id="openingText" position="relative" anim="left" animtime="0.5" animdelay="1" class="col-md-10 col-md-offset-1 vertical-align" z-index="3">
 
-    	<text id="title" position="relative" margin-top="20" anim="none"><![CDATA[<h1 class="black">Multiple Choice Quiz Engine</h1><p class="p_16_black">Welcome to this short quiz.</p><p class="p_16_black">For each question, select the answer before your time runs out!</p>]]></text>
+    	<text id="title" position="relative" margin-top="20" anim="none"><![CDATA[<h1 class="black">Welcome to iASSESS!</h1><p class="p_16_black">Click <strong>START!</strong>when you're ready.</p><p class="p_32_black">For each question, select the answer before your time runs out!</p>]]></text>
 
-    	<button id="goBtn" position="relative" height="40" width="100" margin-top="40" margin-bottom="20" anim="none" event="btnover,begin" target="title"><![CDATA[Let's go!]]></button>
+    	<button id="goBtn" position="relative" height="80" width="200" margin-top="40" margin-bottom="20" anim="none" event="btnover,begin" target="title"><![CDATA[<h1 class="btn-green">START!</h1>]]></button>
     </box>
 
-  <!--timed quiz-->
-  <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-10 col-md-offset-1">
-    <settings timer="true" timerx="0" timery="0"/>
-    
-    <!-- question 1 -->
-    <question id="q1" time="15" event="">
-      <box id="col1" position="relative" class="col-md-6" />
-      <box id="col2" position="relative" class="col-md-6" />
-      <text id="question1" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5">
-        <![CDATA[<p class="p_24">Which of the following items does not belong in the 5S system?</p>]]>
-      </text>
-      
-      <!--option 1 -->
-      <option correct="true">
-      <text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Sit</p>]]>
-      </text>
-      </option>
-      
-      <!--option 2 -->
-      <option correct="false">
-      <text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Shine</p>]]>
-      </text>
-      </option>
-      
-      <!--option 3 -->
-      <option correct="false">
-      <text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left">
-        <![CDATA[<p class="p_16 white">Sustain</p>]]>
-      </text>
-      </option>
-      <!--/options --> 
-      
-      <!-- feedbacks -->
-      <fb id="pass" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/1.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">Correct!</p><p>The 5S system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-      <fb id="fail" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/1.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">No!</p><p>The 5S system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-    </question>
-    <!--
-    <!-- question 2 -->
-    <question id="q2" time="15" event="">
-      <box id="col1" position="relative" class="col-md-6" />
-      <box id="col2" position="relative" class="col-md-6" />
-      <text id="question2" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5">
-        <![CDATA[<p class="p_24">What do you call to that setup utility where you configure the “Boot Priority Settings” where you can select the disk that contains the Operating System?</p>]]>
-      </text>
-      
-      <!--option 1 -->
-      <option correct="false">
-      <text id="option2_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">OHS</p>]]>
-      </text>
-      </option>
-      
-      <!--option 2 -->
-      <option correct="false">
-      <text id="option2_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">CMOS</p>]]>
-      </text>
-      </option>
-      
-      <!--option 3 -->
-      <option correct="true">
-      <text id="option2_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left">
-        <![CDATA[<p class="p_16 white">BIOS</p>]]>
-      </text>
-      </option>
-      <!--/options --> 
-      
-      <!-- feedbacks -->
-      <fb id="pass" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/2.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">Correct!</p><p> BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-      <fb id="fail" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/2.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">No!</p><p> BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-    </question>
-    
-    <!-- question 3 -->
-    <question id="q3" time="15" event="">
-      <box id="col1" position="relative" class="col-md-6" />
-      <box id="col2" position="relative" class="col-md-6" />
-      <text id="question3" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5">
-        <![CDATA[<p class="p_24">What should be done if the display does not match what you expect to view on the monitor?</p>]]>
-      </text>
-      
-      <!--option 1 -->
-      <option correct="true">
-      <text id="option3_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Check if the video / graphics driver is working properly</p>]]>
-      </text>
-      </option>
-      
-      <!--option 2 -->
-      <option correct="false">
-      <text id="option3_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Install a sound card</p>]]>
-      </text>
-      </option>
-      
-      <!--option 3 -->
-      <option correct="false">
-      <text id="option3_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left">
-        <![CDATA[<p class="p_16 white">Install a Video Card</p>]]>
-      </text>
-      </option>
-      <!--/options --> 
-      
-      <!-- feedbacks -->
-      <fb id="pass" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/3.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">Correct!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-      <fb id="fail" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/3.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">No!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-    </question>
-    
-    <!-- question 4 -->
-    <question id="q4" time="15" event="">
-      <box id="col1" position="relative" class="col-md-6" />
-      <box id="col2" position="relative" class="col-md-6" />
-      <text id="question4" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5">
-        <![CDATA[<p class="p_24">Which part of the computer system is also called “the brain or heart of the computer”?</p>]]>
-      </text>
-      
-      <!--option 1 -->
-      <option correct="false">
-      <text id="option4_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Motherboard</p>]]>
-      </text>
-      </option>
-      
-      <!--option 2 -->
-      <option correct="false">
-      <text id="option4_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Power Supply Unit (PSU)</p>]]>
-      </text>
-      </option>
-      
-      <!--option 3 -->
-      <option correct="true">
-      <text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left">
-        <![CDATA[<p class="p_16 white">Central Processing Unit (CPU)</p>]]>
-      </text>
-      </option>
-      <!--/options --> 
-      
-      <!-- feedbacks -->
-      <fb id="pass" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/4.png]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">Correct!</p><p>Central Processing Unit (CPU) is the one responsible for all the processing required for the computer system to operate. It is aliased as the heart or brain of the computer system because aside from processing data, the CPU is also responsible for exchanging data between the system’s memory, peripherals and other components.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-      <fb id="fail" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/4.png]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">No!</p><p>Central Processing Unit (CPU) is the one responsible for all the processing required for the computer system to operate. It is aliased as the heart or brain of the computer system because aside from processing data, the CPU is also responsible for exchanging data between the system’s memory, peripherals and other components.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-    </question>
-    </question>
-    
-    <!-- question 5 -->
-    <question id="q5" time="15" event="">
-      <box id="col1" position="relative" class="col-md-6" />
-      <box id="col2" position="relative" class="col-md-6" />
-      <text id="question5" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5">
-        <![CDATA[<p class="p_24">What should you do after installing some peripheral devices such as sound card?</p>]]>
-      </text>
-      
-      <!--option 1 -->
-      <option correct="false">
-      <text id="option5_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Install video card device driver</p>]]>
-      </text>
-      </option>
-      
-      <!--option 2 -->
-      <option correct="true">
-      <text id="option5_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Install sound card device driver</p>]]>
-      </text>
-      </option>
-      
-      <!--option 3 -->
-      <option correct="false">
-      <text id="option5_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left">
-        <![CDATA[<p class="p_16 white">Install additional speakers</p>]]>
-      </text>
-      </option>
-      <!--/options --> 
-      
-      <!-- feedbacks -->
-      <fb id="pass" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/5.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">Correct!</p><p> In order to utilize a peripheral device, a device driver is required in the software side. Without it, peripherals are just a piece of metal and plastic because device drivers are the instructions written by the manufacturer for the operating system to harness the capability of the peripheral. In case you do not know,  a sound card converts digital data to analog sound waves you can hear.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-      <fb id="fail" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/5.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">No!</p><p> In order to utilize a peripheral device, a device driver is required in the software side. Without it, peripherals are just a piece of metal and plastic because device drivers are the instructions written by the manufacturer for the operating system to harness the capability of the peripheral. In case you do not know,  a sound card converts digital data to analog sound waves you can hear.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-    </question>
-    </question>
-    <!-- question 6 -->
-    <question id="q6" time="15" event="">
-      <box id="col1" position="relative" class="col-md-6" />
-      <box id="col2" position="relative" class="col-md-6" />
-      <text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5">
-        <![CDATA[<p class="p_24">What should you wear to protect computer parts form ESD (Electro-static Discharge)?</p>]]>
-      </text>
-      
-      <!--option 1 -->
-      <option correct="true">
-      <text id="option6_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Anti-static wrist Strap</p>]]>
-      </text>
-      </option>
-      
-      <!--option 2 -->
-      <option correct="false">
-      <text id="option6_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox">
-        <![CDATA[<p class="p_16 white">Gloves</p>]]>
-      </text>
-      </option>
-      
-      <!--option 3 -->
-      <option correct="false">
-      <text id="option6_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left">
-        <![CDATA[<p class="p_16 white">Mask</p>]]>
-      </text>
-      </option>
-      <!--/options --> 
-      
-      <!-- feedbacks -->
-      <fb id="pass" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/6.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">Correct!</p><p> An anti-static wrist strap is a key piece of safety gear that helps to prevent the buildup of static electricity near sensitive electronics or other projects.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-      <fb id="fail" event="">
-        <box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
-          <image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive">
-            <![CDATA[img/quiz/6.jpg]]>
-          </image>
-          <text id="txt1" position="relative" anim="none" margin-bottom="30">
-            <![CDATA[<p class="p_24">No!</p><p> An anti-static wrist strap is a key piece of safety gear that helps to prevent the buildup of static electricity near sensitive electronics or other projects.</p>]]>
-          </text>
-          <button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion">
-          <![CDATA[Try the next one]]>
-          </button>
-          <text id="bottompad" position="relative" anim="none">
-            <![CDATA[<p>&nbsp;</p>]]>
-          </text>
-        </box>
-      </fb>
-    </question>
-    </question>
-    
--->
-    <!--generic timeout text-->
-    <timeout>
-      <box id="center" position="relative" height="100%">
-        <box id="timeOut" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="1" ease="Bounce.easeOut" class="col-sm-8 col-sm-offset-2 vertical-align border timesupbg">
-          <text id="timeoutTxt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
-            <![CDATA[<p class="p_42 white">Times up!</p>]]>
-          </text>
-          <button id="startAgainBtn" position="relative" x="10" margin-bottom="30" height="80" width="200" anim="none" event="btnover,restart">
-          <![CDATA[Try again, Faster!]]>
-          </button>
-        </box>
-      </box>
-    </timeout>
-    
-    <!--score screen-->
-    <score masteryscore="80">
-      <fb id="pass" event="">
-        <box id="center" position="relative" height="100%">
-          <box id="passTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border passbg">
-            <text id="pass_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
-              <![CDATA[<p class="p_30 white glow">CONGRATULATIONS!</p><p class="p_24 orange glow">You have scored [score]%! Looks like you have a good chance of passing the <strong>TESDA's Computer Systems Servicing NCII</strong></p>]]>
-            </text>
-            <button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="200" anim="none" event="btnover,restart,hidepassbg">
-            <![CDATA[Try iASSESS again?]]>
-            </button>
-          </box>
-        </box>
-      </fb>
-      <fb id="fail" event="">
-        <box id="center" position="relative" height="100%">
-          <box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
-            <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
-              <![CDATA[<p class="p_32 white glow">Study smarter! You scored [score]%</p><p class="p_24 orange glow">Why not have another go?</p>]]>
-            </text>
-            <button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg">
-            <![CDATA[Start again]]>
-            </button>
-          </box>
-        </box>
-      </fb>
-    </score>
-  </custom>
+    <!--timed quiz-->
+    <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-10 col-md-offset-1">
+		<settings timer="true" timerx="0" timery="0"/>
+
+
+		<!-- question 1 -->
+        <question id="q1" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question1" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Which of the following items does not belong in the 5S system?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Sit</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Shine</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Sustain</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/1.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>The 5S system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/1.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>The 5S system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 2 -->
+        <question id="q2" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question2" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What do you call to that setup utility where you configure the “Boot Priority Settings” where you can select the disk that contains the Operating System?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">OHS</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">CMOS</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">BIOS</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/2.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p> BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/2.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p> BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 3 -->
+        <question id="q3" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question3" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What should be done if the display does not match what you expect to view on the monitor?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Check if the video / graphics driver is working properly</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Install a sound card</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Install a Video Card</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 4 -->
+        <question id="q4" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question4" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What should be done if the display does not match what you expect to view on the monitor?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Check if the video / graphics driver is working properly</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Install a sound card</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Install a Video Card</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!--generic timeout text-->
+		<timeout>
+			<box id="center" position="relative" height="100%"> 
+	            <box id="timeOut" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="1" ease="Bounce.easeOut" class="col-sm-8 col-sm-offset-2 vertical-align border timesupbg">
+
+					<text id="timeoutTxt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_42 white">Times up!</p>]]></text>
+			
+					<button id="startAgainBtn" position="relative" x="10" margin-bottom="30" height="80" width="200" anim="none" event="btnover,restart"><![CDATA[Try again, Faster!]]></button>
+				</box>
+			</box>
+        </timeout>
+
+
+        <!--score screen-->
+        <score masteryscore="80">
+           <fb id="pass" event="">
+            	<box id="center" position="relative" height="100%">
+	            	<box id="passTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border passbg">
+						
+						<text id="pass_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
+						<![CDATA[<p class="p_30 white glow">CONGRATULATIONS!</p><p class="p_24 orange glow">You have scored [score]%! Looks like you have a good chance of passing the <strong>TESDA's Computer Systems Servicing NCII</strong></p>]]></text>
+						
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="200" anim="none" event="btnover,restart,hidepassbg"><![CDATA[Try iASSESS again?]]></button>
+	                </box>
+                </box>
+            </fb>
+            
+            <fb id="fail" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Study smarter! You scored [score]%</p><p class="p_24 orange glow">Why not have another go?</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[Start again]]></button>
+	                </box> 
+                </box> 
+            </fb>
+        </score>
+
+    </custom>
+
 </data>
+
