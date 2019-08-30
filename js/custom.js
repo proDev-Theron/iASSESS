@@ -172,15 +172,6 @@ function isValidEmail(emailAddress) {
     return pattern.test(emailAddress);
 }
 
-
-/* ==========================================
-   FUNCTION FOR PHONE NUMBER VALIDATION
-============================================= */
-function isValidPhoneNumber(phoneNumber) {
-    return phoneNumber.match(/[0-9-()+]{3,20}/);
-}
-
-
 /* ==========================================
    CONTACT FORM
 ============================================= */

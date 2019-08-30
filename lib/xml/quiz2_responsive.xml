@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+    <events>
+		<event id="btnover">
+			<rollover>
+				<css name="btnOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="btnOutCss">this</css>
+			</rollout>
+		</event>
+
+		<event id="optionover">
+			<rollover>
+				<css name="optionOverCss">this</css>
+			</rollover>
+			
+			<rollout>
+				<css name="optionOutCss">this</css>
+			</rollout>
+		</event>
+		
+		<event id="selectandsubmit">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="select">
+			<click>
+				<css name="optionOverCss">this</css>
+				<function name="select">this</function>
+			</click>
+		</event>
+
+		<event id="submit">
+			<click>
+				<function name="submit">this</function>
+			</click>
+		</event>
+
+		<event id="reset">
+			<click>
+				<function name="reset">this</function>
+			</click>
+		</event>
+		
+        <event id="begin">
+            <click>
+                <anim type="remove" animtime="0" oncomplete="0">openingText</anim>
+                <function name="begin">this</function>
+            </click>
+        </event>
+
+        <event id="loadNextQuestion">
+            <click>
+                <function name="loadNextQuestion">this</function>
+            </click>
+        </event>
+		
+		<event id="restart">
+            <click>
+                <function name="restart">this</function>
+            </click>
+        </event>
+
+        <event id="showq1bg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">q1bg</anim>
+            </click>
+        </event>
+
+         <event id="hidepassbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="showpassbg">
+            <click>
+                <anim type="show" animtime="5" oncomplete="0">passbg</anim>
+            </click>
+        </event>
+
+        <event id="hidefailbg">
+            <click>
+            	<anim type="hide" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+
+        <event id="showfailbg">
+            <click>
+                <anim type="show" animtime="2" oncomplete="0">failbg</anim>
+            </click>
+        </event>
+    </events>    
+
+    <box id="failbg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="failbg" />
+    <box id="orangebg" position="absolute" x="0" y="0" width="100%" height="100%" anim="hide" class="orangebg" />
+
+
+    <!--responsive timer-->
+    <!--2 column layout, timer on the right, moves to top center on phones-->
+    <box id="timerRow" position="absolute" x="0" y="12" anim="none" animtime="0.5" animdelay="1" class="col-md-10 col-md-offset-1">
+    	<box id="timerCol1" position="relative" class="col-md-6" />
+    	<box id="timerContainer" position="relative" class="col-md-6" />
+    </box>
+
+    <!--opening text-->
+    <box id="openingText" position="absolute" anim="left" animtime="0.5" animdelay="1" class="col-md-8 col-md-offset-2 vertical-align cent" z-index="3">
+
+    	<text id="title" position="relative" margin-top="20" anim="none"><![CDATA[<h1 class="black">Welcome to <strong><em>iASSESS!</em></strong></h1><p class="p_16_black">Click <strong>START!</strong>when you're ready.</p><p class="p_32_black">For each question, select the answer before your time runs out!</p>]]></text>
+
+    	<button id="goBtn" position="relative" margin-top="40" anim="big-entrance" event="btnover,begin" target="title"><![CDATA[<h1 class="cent btn-blue">START!</h1>]]></button>
+    </box>
+
+    <!--timed quiz-->
+    <custom type="quiz" id="quiz" position="relative" x="0" y="0" class="col-md-10 col-md-offset-1">
+		<settings timer="true" timerx="0" timery="10"/>
+
+
+		<!-- question 1 -->
+        <question id="q1" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question1" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Which of the following items does not belong in the 5S system?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Sit</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Shine</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option1_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Sustain</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/1.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>The 5S system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/1.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>The 5S system is composed of Sort, Set in Order, Shine, Standardize, and Sustain.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 2 -->
+        <question id="q2" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question2" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What do you call to that setup utility where you configure the “Boot Priority Settings” where you can select the disk that contains the Operating System?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">OHS</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">CMOS</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option2_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">BIOS</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/2.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p> BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/2.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p> BIOS is a special computer software or setup utility where you can select the disk that contains an Operating System. BIOS is an acronym for “Basic Input / Output System”</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+
+		<!-- question 3 -->
+        <question id="q3" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question3" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What should be done if the display does not match what you expect to view on the monitor?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option3_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Check if the video / graphics driver is working properly</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option3_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Install a sound card</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option3_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Install a Video Card</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/3.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Graphics Card driver or Video driver is the one responsible for the graphics, and everything you see on a display device like a monitor.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 4 -->
+        <question id="q4" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question4" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Which part of the computer system is also called “the brain or heart of the computer”?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option1_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white"> Motherboard</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option1_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Power Supply Unit (PSU)</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option4_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Central Processing Unit (CPU)</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/4.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Central Processing Unit (CPU) is the one responsible for all the processing required for the computer system to operate. It is aliased as the heart or brain of the computer system because aside from processing data, the CPU is also responsible for exchanging data between the system’s memory, peripherals and other components.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/4.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Central Processing Unit (CPU) is the one responsible for all the processing required for the computer system to operate. It is aliased as the heart or brain of the computer system because aside from processing data, the CPU is also responsible for exchanging data between the system’s memory, peripherals and other components.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>		
+		
+		<!-- question 5 -->
+        <question id="q5" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question5" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What should you do after installing peripheral devices such as sound card?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option5_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Install sound card device driver</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option5_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Install additional speaker</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option5_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Install a video card </p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/5.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>In order to utilize a peripheral device, a device driver is required in the software side. Without it, peripherals are just a piece of metal and plastic because device drivers are the instructions written by the manufacturer for the operating system to harness the capability of the peripheral. In case you do not know, a sound card converts digital data to analog sound waves you can hear.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/5.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>In order to utilize a peripheral device, a device driver is required in the software side. Without it, peripherals are just a piece of metal and plastic because device drivers are the instructions written by the manufacturer for the operating system to harness the capability of the peripheral. In case you do not know, a sound card converts digital data to analog sound waves you can hear.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 6 -->
+        <question id="q6" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What should you wear to protect computer parts form ESD (Electrostatic Discharge)?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option5_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Gloves</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option5_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Anti-static wrist Strap</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option5_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Mask</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/6.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>An anti-static wrist strap is a key piece of safety gear that helps to prevent the buildup of static electricity near sensitive electronics or other projects.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/6.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>An anti-static wrist strap is a key piece of safety gear that helps to prevent the buildup of static electricity near sensitive electronics or other projects.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 7 -->
+        <question id="q7" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What kind of cable are you going to use if you want to network two computer units only?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Crossover Cable</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Straight-through cable</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Straight-over cable</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/7.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>An Ethernet crossover cable, also known as a crossed cable, connects two Ethernet network devices to each other.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/7.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>An Ethernet crossover cable, also known as a crossed cable, connects two Ethernet network devices to each other.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 8 -->
+        <question id="q8" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What type of network would you suggest to your client who wants to network more than 100 computers?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Personal Area Network</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Campus area network</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Client/server network</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/8.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Client/server network. A computer network in which one centralized, powerful computer (called the server) is a hub to which many less powerful personal computers or workstations (called clients) are connected. This type of network is perfectly fit for high number of computers.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/8.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Client/server network. A computer network in which one centralized, powerful computer (called the server) is a hub to which many less powerful personal computers or workstations (called clients) are connected. This type of network is perfectly fit for high number of computers.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+		<!-- question 9 -->
+        <question id="q9" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What type of network would you recommend if your client has only few computer units?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Peer to peer network</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Campus area network</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Client/server network</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/9.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Stands for "Peer to Peer." In a P2P network, the "peers" are computer systems which are connected to each other via the Internet. It is good for low number of computer because each computer might be being accessed by others it can slow down the performance for the user.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/9.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Stands for "Peer to Peer." In a P2P network, the "peers" are computer systems which are connected to each other via the Internet. It is good for low number of computer because each computer might be being accessed by others it can slow down the performance for the user.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>		
+		<!-- question 10 -->
+        <question id="q10" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What is the common type of cabling standards used for straight thru cable?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">568A wiring standards</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">568B wiring standards</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">569A wiring standards</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/10.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>568B wiring standards is both end of straight thru cable, because it will be crossover cable If you use 568A wiring standards to the other end of your cable. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/10.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>568B wiring standards is both end of straight thru cable, because it will be crossover cable If you use 568A wiring standards to the other end of your cable. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+		
+		<!-- question 11 -->
+        <question id="q11" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What is the set-up where each computer acts as client and server and each user shares other’s file and data, including printers?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Peer to peer</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Client/Server set-up</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Personal Area set-up</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/11.gif]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>A client/server set-up is a system where one or more computers called clients connect to a central computer named a server to share or use resources. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/11.gif]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>A client/server set-up is a system where one or more computers called clients connect to a central computer named a server to share or use resources. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+		<!-- question 11 -->
+		
+        <question id="q12" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What command you should use if you want to see your computer IP address?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">ipconfig</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">CMD</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Ping</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/12.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>The IP address is a numerical label that is used in networks to identify and locate network devices. IP address can be a useful piece of information, especially when you want to set up your home router or when you want to connect to other devices on a network.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/12.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>The IP address is a numerical label that is used in networks to identify and locate network devices. IP address can be a useful piece of information, especially when you want to set up your home router or when you want to connect to other devices on a network.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		<!-- question 11 -->
+		
+        <question id="q13" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question13" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What special group contains all authenticated users and domain guest</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option13_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Administrator</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option13_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Everyone</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Guest</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/13.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Windows Server 2008 uses special identity groups to represent a class of users or the system itself. The everyone group is a special identity group that contains all authenticated users and domain guests.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/13.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Windows Server 2008 uses special identity groups to represent a class of users or the system itself. The everyone group is a special identity group that contains all authenticated users and domain guests.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+        <question id="q14" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Aside from installing anti-virus software, how can you protect your server from viruses?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Use Norton</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Use McAfee</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Use Firewall</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/14.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Firewall is a part of a computer system or network which is designed to block unauthorized access or viruses while permitting outward communication.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/14.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Firewall is a part of a computer system or network which is designed to block unauthorized access or viruses while permitting outward communication.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+        <question id="q15" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What are you going to do to access a server located far from the client computer which you are troubleshooting?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Use Remote Desktop Connection</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Use Sharing Folder</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Use Group Policy Management</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/15.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Remote Desktop Connection is one of the components of Microsoft Windows that allow a user to take control of a remote computer or virtual machine over a network connection.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/15.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Remote Desktop Connection is one of the components of Microsoft Windows that allow a user to take control of a remote computer or virtual machine over a network connection.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+		
+        <question id="q16" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What would you advise to a client who wants to upgrade their computer’s built-in video card?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Buy a new video card with higher capacity </p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Buy a new memory card with lower capacity</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Buy a video card with lower capacity</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/16.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>If you want to upgrade your computer’s built-in video card, you should buy a new video card with higher capacity to make your computer faster. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/16.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>If you want to upgrade your computer’s built-in video card, you should buy a new video card with higher capacity to make your computer faster.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+		
+        <question id="q17" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What should you do if your computer does not recognize your bootable flash drive?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Configure your BIOS to boot on the optical disk drive</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Configure your BIOS to boot on the hard drive</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Configure your BIOS to boot on the flash drive</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/17.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>When the computer starts, the system BIOS begins to check a pre-determined list of drives and devices that may contain an operating system such as Windows and if your flash drive doesn’t recognize by the computer you need to boot your BIOS to the flash drive.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/17.png]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>When the computer starts, the system BIOS begins to check a pre-determined list of drives and devices that may contain an operating system such as Windows and if your flash drive doesn’t recognize by the computer you need to boot your BIOS to the flash drive.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+        <question id="q18" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">If your brand-new computer does not display any image or character, what is the first step you must take?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Check your motherboard</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Check the cable of your monitor</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Check your power supply cable</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/18.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>The first step you must take is check your cable of your monitor because it might be loose and your monitor doesn’t gain any power from your power supply. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/18.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>The first step you must take is check your cable of your monitor because it might be loose and your monitor doesn’t gain any power from your power supply.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+		
+        <question id="q19" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Which storage device can store high amount of data?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">RAM	</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">HDD</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">CD</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/19.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>>Hard Disk Drive (HDD) has a capacity of 250 GB to 1 terabyte or 1000 GB. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/19.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p><p>Hard Disk Drive (HDD) has a capacity of 250 GB to 1 terabyte or 1000 GB.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>
+		
+        <question id="q20" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">Which of the following choices, where you can change the date and time of your computer?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">CMOS</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">ISO</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">BIOS</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/20.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>CMOS (complementary metal-oxide-semiconductor) is the term usually used to describe the small amount of memory on a computer motherboard that stores the BIOS settings. If the CMOS battery is failing, the computer cannot keep the correct time or date on the computer after it has been turned off. </p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/20.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p>CMOS (complementary metal-oxide-semiconductor) is the term usually used to describe the small amount of memory on a computer motherboard that stores the BIOS settings. If the CMOS battery is failing, the computer cannot keep the correct time or date on the computer after it has been turned off.<p></p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+		
+        <question id="q21" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What is a networking device that can access information over a mobile wireless network?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">WAP</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">ROUTER</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">SWITCH</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/21.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>Wireless Application Protocol (WAP) is a technical standard for accessing information over a mobile wireless network. WAPs feature radio transmitters and antennae, which facilitate connectivity between devices and the Internet or a network.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/21.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p>Wireless Application Protocol (WAP) is a technical standard for accessing information over a mobile wireless network. WAPs feature radio transmitters and antennae, which facilitate connectivity between devices and the Internet or a network.<p></p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+	
+        <question id="q22" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What is a networking device that analyzes the contents of data packets transmitted within a network or to another network using cable?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">WAP</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">ROUTER</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">SWITCH</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/22.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>A router is a networking device that forwards data packets between computer networks. Routers perform the traffic directing functions on the Internet. The main purpose of a router is to connect multiple networks and forward packets destined either for its own networks or other networks.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/22.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p>A router is a networking device that forwards data packets between computer networks. Routers perform the traffic directing functions on the Internet. The main purpose of a router is to connect multiple networks and forward packets destined either for its own networks or other networks.<p></p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+	
+        <question id="q23" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What is a networking device that passes on anything received on one connection to all other connections?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">WAP</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">SWITCH</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="true">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">HUB</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/23.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>The purpose of a hub is to join multiple computers or other network devices together to form a single network segment. On this network segment, all devices can communicate directly with each other.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/23.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p>The purpose of a hub is to join multiple computers or other network devices together to form a single network segment. On this network segment, all devices can communicate directly with each other.<p></p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+	
+        <question id="q24" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What is a networking device that connects a number of computers together to make a LAN?</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="false">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">WAP</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="true">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">SWITCH</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">HUB</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/24.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>A Network Switch is a constituent of computer network that connects two network slices and/or two network devices together.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/24.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</p>A Network Switch is a constituent of computer network that connects two network slices and/or two network devices together.<p></p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+	
+        <question id="q25" time="15" event="">
+
+    		<box id="col1" position="relative" class="col-md-6" />
+    		<box id="col2" position="relative" class="col-md-6" />
+
+    		<text id="question6" position="relative" target="col1" x="0" margin-top="150" margin-bottom="40" anim="left" animtime="0.5"><![CDATA[<p class="p_24">What first step you must take if you accidentally spilled a water in your computer which you are currently using.</p>]]></text>
+			
+			<!--option 1 -->
+			<option correct="true">
+				<text id="option7_1" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.5" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Unplug your power cable</p>]]></text>
+			</option>
+			
+			<!--option 2 -->	
+			<option correct="false">
+				<text id="option7_2" position="relative" target="col1" x="match" width="100%" margin-bottom="10" anim="show" animtime="0.5" animdelay="0.6" event="optionover,selectandsubmit" class="optionBox"><![CDATA[<p class="p_16 white">Wipe place where you spilled the water</p>]]></text>
+			</option>
+			
+			<!--option 3 -->
+			<option correct="false">
+				<text id="option7_3" position="relative" target="col1" x="match" width="100%" margin-bottom="40" anim="show" animtime="0.5" animdelay="0.7" event="optionover,selectandsubmit" class="optionBox" float="left"><![CDATA[<p class="p_16 white">Turn off your computer</p>]]></text>
+			</option>
+			<!--/options -->
+	
+			<!-- feedbacks -->
+			<fb id="pass" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="passimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/25.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">Correct!</p><p>The first step you must take is unplugged you power cable to avoid short circuit.</p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+			
+			<fb id="fail" event="">	
+				<box id="fb" position="relative" target="col2" x="0" margin-top="150" clear="both" anim="show" animtime="0.5">
+					<image id="failimage" position="relative" x="0" y="0" margin-bottom="30" anim="none" class="img-responsive"><![CDATA[img/quiz/25.jpg]]></image>
+
+					<text id="txt1" position="relative" anim="none" margin-bottom="30"><![CDATA[<p class="p_24">No!</pThe first step you must take is unplugged you power cable to avoid short circuit.<p></p>]]></text>
+			
+					<button id="nextQBtn" position="relative" margin-bottom="10" width="150" anim="none" event="btnover,loadNextQuestion"><![CDATA[Try the next one]]></button>
+
+					<text id="bottompad" position="relative" anim="none"><![CDATA[<p>&nbsp;</p>]]></text>
+				</box>
+			</fb>
+		</question>	
+
+		<!--generic timeout text-->
+		<timeout>
+			<box id="center" position="relative" height="100%"> 
+	            <box id="timeOut" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="1" ease="Bounce.easeOut" class="col-sm-8 col-sm-offset-2 vertical-align border timesupbg">
+
+					<text id="timeoutTxt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_42 white">Times up!</p>]]></text>
+			
+					<button id="startAgainBtn" position="relative" x="10" margin-bottom="30" height="80" width="200" anim="none" event="btnover,restart"><![CDATA[Try again, Faster!]]></button>
+				</box>
+			</box>
+        </timeout>
+
+
+        <!--score screen-->
+        <score masteryscore="80">
+           <fb id="pass" event="">
+            	<box id="center" position="relative" height="100%">
+	            	<box id="passTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border passbg">
+						
+						<text id="pass_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none">
+						<![CDATA[<p class="p_30 white glow">CONGRATULATIONS!</p><p class="p_24 orange glow">You have scored [score]%! Looks like you have a good chance of passing the <strong>TESDA's Computer Systems Servicing NCII</strong></p>]]></text>
+						
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="200" anim="none" event="btnover,restart,hidepassbg"><![CDATA[Try iASSESS again?]]></button>
+	                </box>
+                </box>
+            </fb>
+            
+            <fb id="fail" event="">
+  				<box id="center" position="relative" height="100%">
+	            	<box id="failTextBox" position="relative" height="350" margin-top="0" margin-bottom="20" anim="left" animtime="0.5" class="col-sm-8 col-sm-offset-2 vertical-align border failbg">
+
+	                    <text id="fail_txt" position="relative" x="10" margin-top="30" margin-bottom="20" anim="none"><![CDATA[<p class="p_32 white glow">Study smarter! You scored [score]%</p><p class="p_24 orange glow">Why not have another go?</p>]]></text>
+	                        
+						<button id="goBtn" position="relative" x="10" margin-bottom="30" height="40" width="120" anim="none" animtime="0.5" event="btnover,restart,hidefailbg"><![CDATA[Start again]]></button>
+	                </box> 
+                </box> 
+            </fb>
+        </score>
+
+    </custom>
+
+</data>
+

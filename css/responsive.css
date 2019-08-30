@@ -2,10 +2,7 @@
    RESPONSIVE FIXES
  ========================================================================== */ 
 
-/* ------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------ */
+
 @media only screen and (max-width : 1199px) {
     
     /*------------------------------------------*/
@@ -18,21 +15,6 @@
         bottom: 50px;
     }
 
-    /*------------------------------------------*/
-    /*    Navbar with Login and Signup
-    /*------------------------------------------*/
-    .navbar-nav>li>a.btn-login {
-        margin-left: 100px;
-        margin-right: 10px;
-    }
-
-    /*------------------------------------------*/
-    /*    Hero Closeup
-    /*------------------------------------------*/
-    .closeup-box img {
-        width: 100%;
-        height: auto;
-    }
 
     /*------------------------------------------*/
     /*  Content Dashboard
@@ -300,25 +282,7 @@
         display: block;
     }
 
-    /*------------------------------------------*/
-    /*    Navbar with Login and Signup
-    /*------------------------------------------*/
-    .navbar-nav>li>a.btn-login, 
-    .navbar-nav>li>a.btn-signup {
-        margin: 10px 0 0 10px;
-        display: inline-block;
-        float: left;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        border: 0;
-    }
-
-    .navbar-nav>li>a.btn-login, 
-    .navbar-nav>li>a.btn-signup {
-        padding: 10px 25px;
-    }
-
+ 
     /*-----------------------------------------------------------*/
     /*    Navbar 3cols
     /*-----------------------------------------------------------*/
@@ -335,62 +299,7 @@
         float: left;
     }
 
-    /*-----------------------------------------------------------*/
-    /*    Hero Section
-    /*-----------------------------------------------------------*/
-    .hero {
-        text-align: center;
-    }
-
-    /*-----------------------------------------------------------*/
-    /*    Hero-General
-    /*-----------------------------------------------------------*/
-    .hero, .hero.height-800 {
-        height: 600px;
-    }
-
-    /*-----------------------------------------------------------*/
-    /*    Hero-Closeup
-    /*-----------------------------------------------------------*/
-    .closeup-box {
-        display: none;
-    }
-
-    /*-----------------------------------------------------------*/
-    /*    Hero Dashboard
-    /*-----------------------------------------------------------*/
-    .dashboard-box img {
-        height: 500px;
-    }
-
-    /*------------------------------------------*/
-    /*  Hero Leadbox
-    /*------------------------------------------*/
-    .hero-leadbox .form-horizontal {
-        margin-top: 50px;
-    }
-
-    /*------------------------------------------*/
-    /*  Hero Video Popup
-    /*------------------------------------------*/
-    .popup-box img {
-        max-width: 50%;
-    }
-
-    .popup-box .popup-button {
-        left: 43%;
-    } 
-
-    .big-popup i {
-        font-size: 120px;
-    }
-
-    .watch-video {
-        display: block;
-        margin-left: 0;
-        margin-top: 15px;
-    }
-
+    
     /*------------------------------------------*/
     /*  Content Block
     /*------------------------------------------*/ 
@@ -621,88 +530,7 @@
         margin-top: 50px;
     }
 
-    /*------------------------------------------*/
-    /*  Pricing Section
-    /*------------------------------------------*/
-    .pricing-3pf .details {
-        margin-bottom: 80px;
-    }
-
-    .pricing-st .h2 {
-        padding-top: 50px;
-    }
-
-    .pricing-sc .price {
-        margin-bottom: 30px;
-    }
-
-    .pricing-2p .info {
-        margin-bottom: 30px;
-    }
-
-    /*------------------------------------------*/
-    /*  Team Section
-    /*------------------------------------------*/
-    .team .t2 {
-        text-align: center;
-    }
-
-    .team .t2 h5 {
-        margin-top: 15px;
-    }
-
-    /*------------------------------------------*/
-    /*  Miscellaneous Section
-    /*------------------------------------------*/
-    .funfacts i, .funfacts .counter {
-        margin-bottom: 5px;
-    }
-
-    .funfacts .counter-left{
-        float:none;
-        display: block;
-        margin-bottom: 10px;
-        margin-right: 0;
-    }
-
-    .funfacts .counter-left i {
-        float: none;
-    }
-
-    .funfacts .text.text-left {
-        text-align: center;
-    }
-
-    .funfacts div[class^="col-md"]:nth-child(3) {
-        margin-bottom: 30px;
-    }
-
-    .timeline .event:before {
-        left: 0;
-        top: -20px;
-        color: #fff;
-        font-weight: 900;
-        font-size: 15px;
-        content: attr(data-date);
-        text-align: right;
-    }
-    
-    /*------------------------------------------*/
-    /*  Subscription Section
-    /*------------------------------------------*/
-    .subscription .sub-left {
-        padding-top: 0;
-        padding-bottom: 20px;
-    }
-
-    .subscription .form-inline .form-group {
-        width: 100%;
-    }
-
-    .subscription .features-devices {
-        margin-bottom: 50px;
-    }
-    
+  
     /*------------------------------------------*/
     /*  Contact Section
     /*------------------------------------------*/
@@ -740,15 +568,7 @@
 
     .footer.f7 .about .logo {
         border-right: transparent;
-    }
- 
-    /*------------------------------------------*/
-    /*  Blog Page
-    /*------------------------------------------*/
-    .pagination {
-        margin-bottom: 120px;
-    }
-   
+    }   
 
 }
 
@@ -902,22 +722,7 @@
         padding-top: 30px;
     }
 
-    /*------------------------------------------*/
-    /*  Hero Video Popup
-    /*------------------------------------------*/
-    .popup-box img {
-        max-width: 70%;
-    }
-
-    .popup-box .popup-button {
-        left: 43%;
-    } 
-
-    .popup-box .popup-button i {
-        font-size: 40px;
-        padding: 20px 22px 18px 31px;
-    }
-
+   
     /*-----------------------------------------------------------*/
     /*    Section Header
     /*-----------------------------------------------------------*/
@@ -985,66 +790,7 @@
         width: 33.33333%;
         margin: 0;
     }
-
-    /*------------------------------------------*/
-    /*  Pricing Section
-    /*------------------------------------------*/
-    .pricing-sc .info {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    .pricing-st .info {
-        margin: 0 auto;
-        margin-bottom: 40px;
-    }
-
-    .ticket-prices .item-price {
-        height: auto;
-        padding: 10px;
-    }
-
-    .ticket-prices .item-price .amount {
-        height: auto;
-        width: auto;
-        float: none;
-        margin: 0;
-        line-height: 44px;
-        background-color: #fff;
-        color: #56B68B;
-        text-align: left;
-    }
-
-    /*------------------------------------------*/
-    /*  Team Section
-    /*------------------------------------------*/
-    .team-list {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    
-    /*------------------------------------------*/
-    /*  Blog Section
-    /*------------------------------------------*/
-    .blog .post-meta {
-        margin-top: 15px;
-    }
-    
-    /*------------------------------------------*/
-    /*  Miscellaneous Section
-    /*------------------------------------------*/
-    .countdown .timer {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .countdown .timer>div {
-        font-size: 40px;
-        line-height: 44px;
-        font-weight: 700;
-    }
-    
-    /*------------------------------------------*/
+ /*------------------------------------------*/
     /*  Contact Section
     /*------------------------------------------*/
     .mini-info {
@@ -1118,32 +864,7 @@
         padding-right: 0;
     }
 
-    /*--------------------------------------------------------------*/
-    /*    Hero Section
-    /*--------------------------------------------------------------*/
-    .hero.height-800 {
-        height: 700px;
-    }
-    
-    /*--------------------------------------------------------------*/
-    /*    Hero Leadbox
-    /*--------------------------------------------------------------*/
-    .hero-leadbox .form-group.w-50 input{
-        display: block;
-        width: 100%;
-    }
 
-    .hero-leadbox .form-group.w-50 input:first-child {
-        margin-bottom: 15px;
-    }
-
-    /*------------------------------------------*/
-    /*  Hero Video Popup
-    /*------------------------------------------*/
-    .popup-box .popup-button,
-    .video .popup-button.sm-popup  {
-        left: 38%;
-    }
 
     /*--------------------------------------------------------------*/
     /*    Section Header

@@ -6,7 +6,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fafafa;
+  color: #fff;
 }
 
 /* Custom default button */
@@ -35,7 +35,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #fafafa;
+  background-color: #fff;
   color: #333;
   text-align: center;
 }

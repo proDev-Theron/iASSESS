@@ -2,3 +2,7 @@
 *.zip
 *.ai
 *.rar
+_notes
+lib/xml/_notes/dwsync.xml
+lib/css/.DS_Store
+images15
